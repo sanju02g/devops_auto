@@ -11,3 +11,10 @@ provider "aws" {
   access_key = "AKIAQFXVA6BEFZSXKNUB"
   secret_key = "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"
 }
+resource "aws_s3_bucket" "my_bucket" {
+  bucket  = "my-test-bucket"
+  tags    = {
+  Name           = "MyS3Bucket"
+  Environment    = "Production"
+  }
+}

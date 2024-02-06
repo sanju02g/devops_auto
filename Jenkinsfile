@@ -9,7 +9,7 @@ pipeline {
                sh '''
                #!/bin/bash
                echo "hello world"
-               terraform apply
+               echo 'yes' | terraform apply
                 '''
             }
         }

@@ -9,6 +9,7 @@ pipeline {
                sh '''
                #!/bin/bash
                echo "hello world"
+               terraform init
                echo 'yes' | terraform apply
                 '''
             }

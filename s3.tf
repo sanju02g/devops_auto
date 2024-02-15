@@ -8,5 +8,5 @@ terraform {
 }
 module "sandbox" {
     source = "./modules"
-    bucket_name="prowizt-bucket
+    bucket_name="prowizt-bucket"
 }

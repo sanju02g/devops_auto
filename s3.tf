@@ -16,3 +16,7 @@ module "sandbox" {           //--> root module
     source = "./modules"     //--? child module
     bucket_name="prowizt-bucket1"
 }
+module "s3arn" {           //--> root module
+    source = "./modules"     //--? child module
+    bucket_name=module.sandbox.s3_arn
+}

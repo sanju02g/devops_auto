@@ -24,12 +24,11 @@ environment {
                 '''
             }
         }*/
-        stage('Hello') {
+        stage('build terraform code') {
             steps {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'
                sh '''
                #!/bin/bash
-               echo "hello world"
                terraform plan
                echo 'yes' | terraform apply
                 '''

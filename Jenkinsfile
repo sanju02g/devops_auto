@@ -29,7 +29,7 @@ environment {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'
                sh '''
                #!/bin/bash
-               terraform plan
+               terraform init
                echo 'yes' | terraform apply
                 '''
             }

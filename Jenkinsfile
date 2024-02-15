@@ -13,7 +13,7 @@ environment {
                 helloWorld()  //shared library file not function name
             }
         }
-        stage('Docker image creation') {
+        /*stage('Docker image creation') {
             steps {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'
                sh '''
@@ -23,8 +23,8 @@ environment {
                
                 '''
             }
-        }
-      /*  stage('Hello') {
+        }*/
+        stage('Hello') {
             steps {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'
                sh '''
@@ -34,15 +34,15 @@ environment {
                echo 'yes' | terraform apply
                 '''
             }
-        } */
-        stage('Docker push image') {
+        } 
+        /*stage('Docker push image') {
             steps {
                 withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
                 sh "docker login -u sanju02g -p ${dockerpwd}"
             }
             sh "docker push sanju02g/jenkinsimage:${DOCKER_TAG}"
             }
-        }
+        }*/
     }
 }
 def getVersion(){

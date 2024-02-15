@@ -21,5 +21,5 @@ resource "aws_s3_bucket" "mybucket" {
   }
 }
 output "s3_arn"{
-value=aws_s3_bucket.mybucket.s3_bucket_arn
+value=aws_s3_bucket.mybucket.s3_bucket_region
 }

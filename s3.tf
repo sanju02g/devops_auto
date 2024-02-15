@@ -12,7 +12,7 @@ provider "aws" {
   secret_key = "Kg33Uz29/4Em0Sz5oDzRGo4ouDaZBie8wvimEGhz"
 }
 
-module "sandbox" {
-    source = "./modules"
+module "sandbox" {           //--> root module
+    source = "./modules"     //--? child module
     bucket_name="prowizt-bucket1"
 }

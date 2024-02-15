@@ -20,3 +20,6 @@ resource "aws_s3_bucket" "mybucket" {
   Environment    = "Production"
   }
 }
+output "s3_arn"{
+value=aws_s3_bucket.mybucket.s3_bucket_arn
+}

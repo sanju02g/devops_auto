@@ -10,7 +10,7 @@ environment {
     stages {
         stage('shared library test') {
             steps {
-                helloWorld()  //shared library file not function name
+                helloWorld()  //shared library file not function name written in vars folder
             }
         }
         /*stage('Docker image creation') {

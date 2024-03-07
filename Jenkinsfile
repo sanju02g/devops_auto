@@ -1,4 +1,4 @@
-@Library("my-shared-library") _  //importing shared library  jenkins dashboard->configure system-> global pipeline library(needs to do these chnages)
+@Library("my-shared-library") _  //importing shared library  jenkins dashboard->configure system-> global pipeline library(needs to do these chnages) and give repo and branch details
 pipeline {
     agent any
    /* agent {
@@ -20,7 +20,17 @@ environment {
                sh '''
                #!/bin/bash
                cd ./ansible
+               docker rm $(docker ps -qa)
                docker build -t sanju02g/ansible:${DOCKER_TAG} .
+               
+                '''
+            }
+        }
+        stage('Docker container creation') {
+            steps {
+               sh '''
+               #!/bin/bash
+               docker container run -it -d --name ansible:${DOCKER_TAG} sanju02g/ansible:${DOCKER_TAG} 
                
                 '''
             }

@@ -30,7 +30,7 @@ environment {
             steps {
                sh '''
                #!/bin/bash
-               docker container run -it -d --name ansible:${DOCKER_TAG} sanju02g/ansible:${DOCKER_TAG} 
+               docker container run -it -d --name ansible-${DOCKER_TAG} sanju02g/ansible:${DOCKER_TAG} 
                
                 '''
             }

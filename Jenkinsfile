@@ -1,8 +1,9 @@
 @Library("my-shared-library") _  //importing shared library
 pipeline {
-    agent {
+    agent any
+   /* agent {
   label 'terraform'
-}
+}*/
 environment {
   DOCKER_TAG = getVersion()
 }
@@ -13,18 +14,18 @@ environment {
                 helloWorld()  //shared library file not function name written in vars folder
             }
         }
-        /*stage('Docker image creation') {
+        stage('Docker image creation') {
             steps {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'
                sh '''
                #!/bin/bash
-               sudo chmod 666 /var/run/docker.sock
-               docker build -t sanju02g/jenkinsimage:${DOCKER_TAG} .
+               cd devops_auto/ansible
+               docker build -t sanju02g/ansible:${DOCKER_TAG} .
                
                 '''
             }
-        }*/
-        stage('build terraform code') {
+        }
+        /*stage('build terraform code') {
             steps {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'
                sh '''
@@ -33,7 +34,7 @@ environment {
                echo 'yes' | terraform apply
                 '''
             }
-        } 
+        } */
         /*stage('Docker push image') {
             steps {
                 withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {

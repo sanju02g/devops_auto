@@ -26,7 +26,7 @@ environment {
                 '''
             }
         }
-        stage('Docker container creation') {
+        stage('Docker ansible container creation') {
             steps {
                sh '''
                #!/bin/bash

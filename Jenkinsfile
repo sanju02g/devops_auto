@@ -1,4 +1,4 @@
-@Library("my-shared-library") _  //importing shared library
+@Library("my-shared-library") _  //importing shared library  jenkins dashboard->configure system-> global pipeline library(needs to do these chnages)
 pipeline {
     agent any
    /* agent {

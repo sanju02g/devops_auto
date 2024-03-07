@@ -20,7 +20,7 @@ environment {
                sh '''
                #!/bin/bash
                cd ./ansible
-               docker rm $(docker ps -qa)
+               docker stop $(docker ps -a -q) && docker rm $(docker ps -qa)
                docker build -t sanju02g/ansible:${DOCKER_TAG} .
                
                 '''

@@ -20,7 +20,7 @@ environment {
                sh '''
                #!/bin/bash
                cd ./ansible
-               docker build -t sanju02g/ansible:${DOCKER_TAG} .
+               sudo docker build -t sanju02g/ansible:${DOCKER_TAG} .
                
                 '''
             }

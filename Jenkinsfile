@@ -20,7 +20,7 @@ environment {
                sh '''
                #!/bin/bash
                cd ./ansible
-               chmod 777 /var/run/docker.sock
+               sudo chmod 777 /var/run/docker.sock
                docker stop $(docker ps -a -q) && docker rm $(docker ps -qa)
                docker build -t sanju02g/ansible:${DOCKER_TAG} .
                

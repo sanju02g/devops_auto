@@ -35,6 +35,13 @@ environment {
                 '''
             }
         }
+         stage('parameterized demo') {
+            steps {
+              script{
+                  properties([parameters([string(defaultValue: 'dev', name: 'environment')])])
+              }
+            }
+        }
         /*stage('build terraform code') {
             steps {
                 git branch: 'main', url: 'https://github.com/sanju02g/devops_auto.git'

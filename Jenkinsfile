@@ -54,7 +54,7 @@ environment {
                 '''
             }
         } */
-        /*stage('Docker push image') {
+        /*stage('Docker push image') { 
             steps {
                 withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
                 sh "docker login -u sanju02g -p ${dockerpwd}"

@@ -39,7 +39,7 @@ environment {
             steps {
               script{
                   properties([parameters([string(defaultValue: 'dev', name: 'environment')])])
-                  sh "echo parameters are $1 "
+                  sh "echo parameter is ${params.environmnet}"
                   
               }
             }

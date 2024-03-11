@@ -38,8 +38,8 @@ environment {
          stage('parameterized demo') {
             steps {
               script{
-                  def output= sh returnStdout: true , script: 'properties([parameters([string(defaultValue: 'dev', name: 'environment')])])'
-                  sh "echo $output"
+                  properties([parameters([string(defaultValue: 'dev', name: 'environment')])])
+                  sh "echo parameters are $1 "
                   
               }
             }

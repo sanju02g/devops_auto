@@ -7,6 +7,10 @@ pipeline {
 environment {
   DOCKER_TAG = getVersion()
 }
+/*parameters {
+        string(name: 'BRANCH_NAME', defaultValue: 'master', description: 'Branch to build')
+        choice(name: 'ENVIRONMENT', choices: ['dev', 'qa', 'prod'], description: 'Environment to deploy to')
+    }*/
 
     stages {
         stage('shared library test') {

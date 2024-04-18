@@ -14,7 +14,7 @@ provider "aws" {
 
 module "sandbox" {           //--> root module
     source = "./modules"     //--? child module
-    bucket_name="prowizt-bucket1"
+    bucket_name="prowiztestbucketnew"
 }
 /*module "s3arn" {           
     source = "./modules"    

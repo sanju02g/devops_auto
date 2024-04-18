@@ -42,10 +42,10 @@ resource "aws_s3_bucket" "mybucket" {
 //--------------------for_each functionality example....................................................
 //  for_each=toset(var.s3_names)
   for_each=var.s3_names_object
-  bucket  = "${var.bucket_name}-${each.value}"
+  bucket  = "${var.bucket_name}-${each.value.names}"
   tags    = {
-  Name           = "MyS3testBucket.${each.value}"
-  Environment    = "Production.${each.value}"
+  Name           = "MyS3testBucket.${each.value.names}"
+  Environment    = "Production.${each.value.names}"
   }
 
 }

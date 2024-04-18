@@ -13,7 +13,7 @@ provider "aws" {
 }
 resource "s3_names"{
   type=set(string) 
-  default=['1','2']
+  default=["1","2"]
 }
 resource "aws_s3_bucket" "mybucket" {
 //count functinality example

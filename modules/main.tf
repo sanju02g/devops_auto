@@ -11,11 +11,11 @@ provider "aws" {
  # access_key = "AKIAQFXVA6BEFZSXKNUB"
  # secret_key = "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"
 }
-resource "s3_names"{
+variable "s3_names"{
   type=set(string) 
   default=["1","2"]
 }
-variable "aws_s3_bucket" "mybucket" {
+resource "aws_s3_bucket" "mybucket" {
 //count functinality example
 /*  count=2   // count to deploy same multiple resourses 
   bucket  = "${var.bucket_name}-${each.key}"

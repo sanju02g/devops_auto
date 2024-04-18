@@ -16,7 +16,8 @@ module "sandbox" {           //--> root module
     source = "./modules"     //--? child module
     bucket_name="prowizt-bucket1"
 }
-module "s3arn" {           
+/*module "s3arn" {           
     source = "./modules"    
     bucket_name=module.sandbox.s3_arn        //inputting the value generated in other module
 }
+*/

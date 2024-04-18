@@ -26,17 +26,15 @@ variable "s3_names_object"{
   }
 second={
   names="2"
-}
-  }
-}
+}}}
 //----------------------------------------------------------------------------------------------------
 resource "aws_s3_bucket" "mybucket" {
 //------------------count functinality example-------------------------------------------------------
 /*  count=2   // count to deploy same multiple resourses 
   bucket  = "${var.bucket_name}-${each.key}"
   tags    = {
-  Name           = "MyS3testBucket.${each.key}"
-  Environment    = "Production.${each.key}"
+  Name           = "MyS3testBucket.${each.value}"
+  Environment    = "Production.${each.value}"
   }*/
 
 //--------------------for_each functionality example....................................................

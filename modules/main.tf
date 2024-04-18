@@ -12,20 +12,20 @@ provider "aws" {
  # secret_key = "Kg33Uz29/4Em0Sz5oDzRGo4ouDaZBie8wvimEGhz"
 }
 variable "s3_names"{
-  type=set(string) 
+  type=list(string) 
   default=["1","2"]
 }
 resource "aws_s3_bucket" "mybucket" {
 //count functinality example
 /*  count=2   // count to deploy same multiple resourses 
-  bucket  = "prowiztest-${each.key}"
+  bucket  = "${var.bucket_name}-${each.key}"
   tags    = {
   Name           = "MyS3testBucket.${each.key}"
   Environment    = "Production.${each.key}"
   }*/
 
 //for_each functionality example
-  for_each=s3_names
+  for_each=toset(var.s3_names)
   bucket  = "${var.bucket_name}-${each.key}"
   tags    = {
   Name           = "MyS3testBucket.${each.key}"

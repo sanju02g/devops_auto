@@ -11,12 +11,27 @@ provider "aws" {
  # access_key = "AKIAQFXVA6BEFZSXKNUB"
  # secret_key = "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"
 }
+//---------------------------------------------------------------------------------------------------
 variable "s3_names"{
   type=list(string) 
   default=["1","2"]
 }
+variable "s3_names_object"{
+  type=map(object({
+  names=string
+  }))
+  default={
+  first={
+  names="1"
+  }
+second={
+  names="2"
+}
+  }
+}
+//----------------------------------------------------------------------------------------------------
 resource "aws_s3_bucket" "mybucket" {
-//count functinality example
+//------------------count functinality example-------------------------------------------------------
 /*  count=2   // count to deploy same multiple resourses 
   bucket  = "${var.bucket_name}-${each.key}"
   tags    = {
@@ -24,8 +39,9 @@ resource "aws_s3_bucket" "mybucket" {
   Environment    = "Production.${each.key}"
   }*/
 
-//for_each functionality example
-  for_each=toset(var.s3_names)
+//--------------------for_each functionality example....................................................
+//  for_each=toset(var.s3_names)
+  for_each=var.s3_names_object
   bucket  = "${var.bucket_name}-${each.key}"
   tags    = {
   Name           = "MyS3testBucket.${each.key}"

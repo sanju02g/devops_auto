@@ -33,7 +33,7 @@ second={
 resource "aws_s3_bucket" "mybucket" {
 //------------------count functinality example-------------------------------------------------------
 /*  count=2   // count to deploy same multiple resourses 
-  bucket  = "${var.bucket_name}-${each.key}"
+  bucket  = "${var.bucket_name}-${each.value}"
   tags    = {
   Name           = "MyS3testBucket.${each.value}"
   Environment    = "Production.${each.value}"

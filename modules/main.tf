@@ -26,10 +26,10 @@ resource "aws_s3_bucket" "mybucket" {
 
 //for_each functionality example
   for_each=s3_names
-  bucket  = "${var.bucket_name}-${count.index}"
+  bucket  = "${var.bucket_name}-${each.key}"
   tags    = {
-  Name           = "MyS3testBucket.${count.index}"
-  Environment    = "Production.${count.index}"
+  Name           = "MyS3testBucket.${each.key}"
+  Environment    = "Production.${each.key}"
   }
 
 }

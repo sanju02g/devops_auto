@@ -6,5 +6,10 @@ pipeline{
                 git url:'https://github.com/sanju02g/devops_auto.git' , branch:'kubernetes'
             }
         }
+        stage("dummy stage"){
+            step{
+                sh 'echo reached'
+            }
+        }
     }
 }

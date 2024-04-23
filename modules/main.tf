@@ -20,19 +20,11 @@ vpc_security_group_ids = ["sg-1d0c9051"]
 associate_public_ip_address = true
 subnet_id= "subnet-9b12d9a5"
 key_name= "demo"
-ebs_block_device = [
-    {
-      device_name = "/dev/sdf"
-      volume_type = "gp3"
-      volume_size = 10
-      throughput  = 200
-      encrypted   = true
-      //kms_key_id  = aws_kms_key.this.arn
-      tags = {
-        MountPoint = "/mnt/data"
-      }
-    }
-  ]
+ebs_block_device {
+    device_name = "/dev/sda1"
+    volume_size = 10
+    volume_type = "gp2"
+  }
 
 }
 

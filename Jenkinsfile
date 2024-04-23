@@ -2,7 +2,7 @@ pipeline{
     agent: any
     stages{
         stage("git checkout stage"){
-            step{
+            steps{
                 git url:'https://github.com/sanju02g/devops_auto.git' , branch:'kubernetes'
             }
         }

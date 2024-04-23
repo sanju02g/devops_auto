@@ -23,6 +23,7 @@ subnet_id= "subnet-09b2b12d2f9dffb77"
 key_name= "test"
 
 }
+//---------------------------------------------END EC2 CREATION --------------------------------
 
 output "s3_arn"{          //outputting the resouses values
 value="testprowiz"

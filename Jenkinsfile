@@ -8,7 +8,7 @@ pipeline{
         }
         stage("dummy stage"){
             steps{
-                sh 'terraform --version'
+                sh ''' terraform init '''
             }
         }
     }

@@ -8,8 +8,8 @@ terraform {
 }
 provider "aws" {
   region     = "us-east-1"
- # access_key = "AKIAQFXVA6BEFZSXKNUB"
- # secret_key = "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"
+  access_key = "AKIATYW55XGJBR5T4VYB"
+  secret_key = "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"
 }
 //-----------------------------------------------EC2-CREATION-------------------------------
 

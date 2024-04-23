@@ -6,11 +6,11 @@ terraform {
     }
   }
 }
-// admin user credentials
+// abhilash user credentials
 provider "aws" {
-  region     = "ap-south-1"
-  access_key = "AKIATYW55XGJFTPCOUWI"
-  secret_key = "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"
+  region     = "us-east-1"
+  access_key = "AKIATYW55XGJGNSFDEF6"
+  secret_key = "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"
 }
 //-----------------------------------------------EC2-CREATION-------------------------------
 

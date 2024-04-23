@@ -20,19 +20,19 @@ instance_type = "t2.medium"
 vpc_security_group_ids = ["sg-0958d5a6ca3d11d10"]
 associate_public_ip_address = true
 subnet_id= "subnet-09b2b12d2f9dffb77"
-key_name= "test"
+key_name= "minikey"
 user_data = file("${path.module}/userdata.sh")
-/*connection {
+connection {
     type        = "ssh"
     user        = "ec2-user"
-    private_key = file("~/.ssh/id_rsa")
+    private_key = file("${path.module}/minikey")
     host        = self.public_ip
   }
 provisioner "remote-exec" {
     inline = [
       "sudo yum update -y"
     ]
-  }*/
+  }
 
 }
 

@@ -6,9 +6,13 @@ pipeline{
                 git url:'https://github.com/sanju02g/devops_auto.git' , branch:'kubernetes'
             }
         }
-        stage("dummy stage"){
+        stage("tearraform stage"){
             steps{
-                sh ''' terraform init '''
+                sh ''' 
+                #!/bin/bash
+                terraform init
+                terraform apply
+                '''
             }
         }
     }

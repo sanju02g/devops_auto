@@ -21,7 +21,8 @@ vpc_security_group_ids = ["sg-0958d5a6ca3d11d10"]
 associate_public_ip_address = true
 subnet_id= "subnet-09b2b12d2f9dffb77"
 key_name= "test"
-connection {
+user_data = file("${path.module}/userdata.sh")
+/*connection {
     type        = "ssh"
     user        = "ec2-user"
     private_key = file("~/.ssh/id_rsa")
@@ -31,7 +32,7 @@ provisioner "remote-exec" {
     inline = [
       "sudo yum update -y"
     ]
-  }
+  }*/
 
 }
 

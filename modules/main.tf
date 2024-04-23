@@ -6,10 +6,11 @@ terraform {
     }
   }
 }
+// admin user credentials
 provider "aws" {
   region     = "us-east-1"
-  access_key = "AKIAQFXVA6BEFZSXKNUB"
-  secret_key = "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"
+  access_key = "AKIATYW55XGJFTPCOUWI"
+  secret_key = "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"
 }
 //-----------------------------------------------EC2-CREATION-------------------------------
 

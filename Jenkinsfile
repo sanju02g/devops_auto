@@ -8,7 +8,7 @@ pipeline{
         }
         stage("dummy stage"){
             steps{
-                sh 'echo reached '
+                sh 'ls'
             }
         }
     }

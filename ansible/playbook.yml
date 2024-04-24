@@ -1,13 +1,49 @@
 ---
-- hosts: dev
+- name: install minikube
+  hosts: localhost
   become: yes
   tasks:
-    - name: install nginx
-      #shell: sudo yum install nginx -y
-      dnf:
-          name: nginx
-          state: latest
-    - name: start nginx
+    - name: Install docker
+      yum:
+        name: docker
+        state: present
+     # notify: start docker
+     # handlers:
+    - name: start docker
       service:
-              name: nginx
-              state: started
+        name: docker
+        state: started
+    - name: Setup repo for kubectl
+      yum_repository:
+        name: Kubernetes
+        description: Kubectl
+        baseurl: https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+        gpgcheck: yes
+        gpgkey: https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-package-key.gpg
+        repo_gpgcheck: yes
+    - name: Download kubectl binary
+      get_url:
+        url: https://s3.us-west-2.amazonaws.com/amazon-eks/1.22.6/2022-03-09/bin/linux/amd64/kubectl
+        dest: /usr/local/bin/kubectl
+        mode: 0755
+    - name: Verify kubectl installation
+      command: kubectl version --client
+      register: kubectl_version
+
+    - name: Install conntrack
+      yum:
+        name: conntrack
+        state: present
+    - name: Download minikube package
+      get_url:
+        url: https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
+        dest: /tmp/minikube-latest.x86_64.rpm
+
+    - name: Install minikube
+      yum:
+        name: /tmp/minikube-latest.x86_64.rpm
+        state: present
+        validate_certs: no
+
+    - name: Start Minikube
+      command: minikube start --driver=none

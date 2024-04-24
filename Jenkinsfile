@@ -10,6 +10,7 @@ pipeline{
             steps{
                 sh ''' 
                 #!/bin/bash
+                chmod 600 ./modules/minikey
                 terraform init
                 terraform apply -auto-approve
                 '''

@@ -11,7 +11,7 @@ pipeline{
             steps{
                 sshagent(['terraform']) {
                 sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.94.94 
-                    scp -r ./ansible ec2-user@15.206.94.94:/home/ec2-user/
+                    scp -r ./ansible/* ec2-user@15.206.94.94:/etc/ansible/
                 '''
             }
         }

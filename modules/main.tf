@@ -17,6 +17,9 @@ provider "aws" {
 resource "aws_instance" "minikube_instance"{
 ami= "ami-001843b876406202a"
 instance_type = "t2.medium"
+lifecycle {
+    replace_triggered_by = []
+  }
 //vpc_security_group_ids = ["sg-07311584c92f02038"]
 security_groups = ["sg-07311584c92f02038"]
 associate_public_ip_address = true

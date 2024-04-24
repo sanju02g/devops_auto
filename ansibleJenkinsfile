@@ -10,7 +10,7 @@ pipeline{
         stage("tearraform stage"){
             steps{
                 sshagent(['terraform']) {
-                sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.94.94 "ansible --version"
+                sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.94.94 "ls"
                    hostname
                 '''
             }

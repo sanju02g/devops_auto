@@ -17,7 +17,8 @@ provider "aws" {
 resource "aws_instance" "minikube_instance"{
 ami= "ami-001843b876406202a"
 instance_type = "t2.medium"
-vpc_security_group_ids = ["sg-07311584c92f02038"]
+//vpc_security_group_ids = ["sg-07311584c92f02038"]
+security_groups = ["sg-07311584c92f02038"]
 associate_public_ip_address = true
 subnet_id= "subnet-06fb8745e7f68014f"
 key_name= "minikey"

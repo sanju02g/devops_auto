@@ -9,10 +9,10 @@ pipeline{
         }
         stage("tearraform stage"){
             steps{
-                sh ''' 
-                #!/bin/bash
-                echo "reached"
-                '''
+                sshagent(['terraform']) {
+                 sh 'ssh ec2-user@15.206.94.94'
+                 sh 'echo "recahed"'
+                }
             }
         }
     }

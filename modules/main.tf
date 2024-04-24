@@ -32,11 +32,11 @@ connection {
     private_key = file("${path.module}/minikey.pem")
     host        = self.public_ip
   }
-provisioner "remote-exec" {
+/*provisioner "remote-exec" {
     inline = [
       "sudo yum update -y"
     ]
-  }
+  }*/
 
 }
 

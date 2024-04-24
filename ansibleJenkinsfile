@@ -11,7 +11,7 @@ pipeline{
             steps{
                 sshagent(['terraform']) {
                 sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.94.94
-                   ls
+                   hostname
                 '''
             }
         }

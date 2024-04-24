@@ -11,9 +11,6 @@ pipeline{
                 sh ''' 
                 #!/bin/bash
                 chmod u+r ./modules/minikey.pem
-                sudo cd /home/ec2-user/.ssh
-                chmod u+r ./*
-                cd /var/jenkins_home/workspace/kubernetes
                 terraform init
                 terraform apply -auto-approve
                 '''

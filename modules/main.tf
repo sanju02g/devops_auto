@@ -27,7 +27,7 @@ connection {
     user        = "ec2-user"
     private_key = file("${path.module}/minikey.pem")
     host        = self.public_ip
-    agent       = true
+    agent       = false
   }
 provisioner "remote-exec" {
     inline = [

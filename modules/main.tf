@@ -25,7 +25,7 @@ user_data = file("${path.module}/userdata.sh")
 connection {
     type        = "ssh"
     user        = "ec2-user"
-    private_key = file("${path.module}/minikey.pem")
+    private_key = file("${path.module}/minikey")
     host        = self.public_ip
   }
 provisioner "remote-exec" {

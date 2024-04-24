@@ -36,14 +36,9 @@
         state: present
     - name: Download minikube package
       get_url:
-        url: https://storage.googleapis.com/minikube/releases/latest/minikube-latest.x86_64.rpm
-        dest: /tmp/minikube-latest.x86_64.rpm
-
-    - name: Install minikube
-      yum:
-        name: /tmp/minikube-latest.x86_64.rpm
-        state: present
-        validate_certs: no
+        url: https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
+        dest: /usr/local/bin/
+        mode: 0755
 
     - name: Start Minikube
-      command: minikube start --driver=none
+      command: sudo install minikube-linux-amd64 /usr/local/bin/minikube

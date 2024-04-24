@@ -10,7 +10,7 @@ pipeline{
         stage("tearraform stage"){
             steps{
                 sshagent(['terraform']) {
-                 sh 'ssh ec2-user@15.206.94.94'
+                 sh 'ssh ec2-user@15.206.94.94 "cd /home/ec2-user/terraform/kubernetes && terraform init"'
                  sh 'echo "recahed"'
                 }
             }

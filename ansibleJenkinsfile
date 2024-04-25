@@ -1,6 +1,9 @@
 
 pipeline{
     agent any
+properties{
+    string(name:"ip_addess", defaultValue:"none")
+}
     stages{
         stage("git checkout stage"){
             steps{

@@ -1,7 +1,7 @@
 
 pipeline{
     agent any
-properties{
+parameters{
     string(name:"ip_addess", defaultValue:"none")
 }
     stages{

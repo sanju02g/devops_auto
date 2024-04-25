@@ -13,9 +13,7 @@ pipeline{
             steps{
                 sh ''' 
                 #!/bin/bash
-                chmod u+r ./modules/minikey.pem
                 terraform init
-               // terraform destroy -auto-approve
                 '''
             }
         }

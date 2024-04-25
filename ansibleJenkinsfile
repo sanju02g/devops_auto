@@ -10,8 +10,8 @@ pipeline{
         stage("tearraform stage"){
             steps{
                 sshagent(['terraform']) {
-                sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.94.94 
-                    scp -r ./ansible/* ec2-user@15.206.94.94:/home/ec2-user/
+                sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.74.72 
+                    scp -r ./ansible/* ec2-user@15.206.74.72:/home/ec2-user/
                 '''
             }
         }

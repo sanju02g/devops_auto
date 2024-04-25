@@ -1,5 +1,8 @@
 pipeline{
     agent any
+    parameters{
+        choice(name: 'terraform_command', choices: ['apply','destroy'], description: 'created for terrfaorm')
+    }
     stages{
         stage("git checkout stage"){
             steps{
@@ -12,7 +15,7 @@ pipeline{
                 #!/bin/bash
                 chmod u+r ./modules/minikey.pem
                 terraform init
-                terraform destroy -auto-approve
+               // terraform destroy -auto-approve
                 '''
             }
         }

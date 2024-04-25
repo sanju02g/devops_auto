@@ -37,7 +37,7 @@
     - name: Download minikube package
       get_url:
         url: https://storage.googleapis.com/minikube/releases/v1.23.1/minikube-linux-amd64
-        dest: /usr/local/bin/
+        dest: .
         mode: 0755
 
     - name: Start Minikube

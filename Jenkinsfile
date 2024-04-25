@@ -22,7 +22,7 @@ pipeline{
                 sh ''' 
                 #!/bin/bash
                 terraform init
-                terraform $env.terraform -auto-approve
+                terraform "$env.terraform" -auto-approve
                 '''
             }
         }

@@ -3,6 +3,9 @@ pipeline{
     parameters{
         choice(name: 'terraform_command', choices: ['apply','destroy'], description: 'created for terrfaorm')
     }
+    environment{
+        terraform=${params.terraform_command}
+    }
     stages{
         stage("validating"){
             steps{
@@ -19,7 +22,7 @@ pipeline{
                 sh ''' 
                 #!/bin/bash
                 terraform init
-                terraform $1 -auto-approve
+                terraform $env.terraform -auto-approve
                 '''
             }
         }

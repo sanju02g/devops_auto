@@ -13,8 +13,8 @@ parameters{
         stage("tearraform stage"){
             steps{
                 sshagent(['terraform']) {
-                sh '''ssh -o StrictHostKeyChecking=no ec2-user@15.206.74.72 
-                    scp -r ./ansible/* ec2-user@15.206.74.72:/home/ec2-user/
+                sh '''ssh -o StrictHostKeyChecking=no ec2-user@13.126.186.44 
+                    scp -r ./ansible/* ec2-user@13.126.186.44:/home/ec2-user/
                 '''
             }
         }

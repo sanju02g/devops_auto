@@ -4,7 +4,7 @@ pipeline{
         choice(name: 'terraform_command', choices: ['apply','destroy'], description: 'created for terrfaorm')
     }
     environment{
-        terraform=${params.terraform_command}
+        terraform="${params.terraform_command}"
     }
     stages{
         stage("validating"){

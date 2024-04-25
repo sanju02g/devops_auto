@@ -15,7 +15,7 @@ parameters{
                 sshagent(['terraform']) {
                 sh ''' ssh -o StrictHostKeyChecking=no ec2-user@"$ip_addess" 
                     scp -r ./ansible/* ec2-user@"$ip_addess":/home/ec2-user/
-                   
+                    ssh -o StrictHostKeyChecking=no ec2-user@"$ip_addess" "ansible-playbook playbook.yml"
                 '''
             }
         }

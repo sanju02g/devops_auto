@@ -14,6 +14,7 @@ pipeline{
                 sh ''' 
                 #!/bin/bash
                 terraform init
+                terraform params.terraform_command -auto-approve
                 '''
             }
         }

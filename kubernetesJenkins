@@ -15,7 +15,7 @@ environment{
             sshagent(['demo']) {
              sh '''ssh ec2-user@54.172.101.24
                   scp -r Dockerfile ec2-user@54.172.101.24:/home/ec2-user/
-                  ssh ec2-user@54.172.101.24 "sudo docker build -t nginx/latest ."
+                  ssh ec2-user@54.172.101.24 "sudo docker.build nginx/latest"
                 '''
                     }
           }

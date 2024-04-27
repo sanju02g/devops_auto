@@ -12,7 +12,9 @@ environment{
         }
        stage("create docker image"){
           steps{
-            dockerimage=docker.build dockerimagename
+            script {
+              dockerImage = docker.build dockerimagename
+           }
           }
        }
 }

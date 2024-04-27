@@ -11,13 +11,10 @@ environment{
             }
         }
        stage("create docker image"){
-          agent {
-                label 'demo'
-            }
           steps{
-            script {
-              dockerImage = docker.build dockerimagename
-           }
+            sshagent(['demo']) {
+             sh "ssh ec2-user@54.172.101.24"
+                    }
           }
        }
 }

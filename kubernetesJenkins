@@ -11,6 +11,9 @@ environment{
             }
         }
        stage("create docker image"){
+          agent {
+                label 'demo'
+            }
           steps{
             script {
               dockerImage = docker.build dockerimagename

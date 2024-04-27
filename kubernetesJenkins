@@ -1,7 +1,7 @@
 pipeline{
     agent any
 environment{
-  dockerImagename= "nginx/latest"
+  dockerimagename= "nginx/latest"
   dockerimage= ""
 }
     stages{
@@ -12,7 +12,7 @@ environment{
         }
        stage("create docker image"){
           steps{
-            dockerimage=docker.build dockerImagename
+            dockerimage=docker.build dockerimagename
           }
        }
 }

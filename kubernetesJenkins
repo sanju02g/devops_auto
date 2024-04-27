@@ -15,6 +15,7 @@ environment{
             sshagent(['demo']) {
              sh '''ssh ec2-user@54.172.101.24
                    ssh -o StrictHostKeyChecking=no ec2-user@54.172.101.24" "Dockerfile"
+                '''
                     }
           }
        }

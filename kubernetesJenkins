@@ -20,7 +20,7 @@ environment{
         }
         stage("docker image push") {
              environment {
-              dockerregistry: "dockercredentials"
+              dockerregistry= "dockercredentials"
              }
             steps{
                 script {

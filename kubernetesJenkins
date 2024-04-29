@@ -14,7 +14,18 @@ environment{
             steps {
                 script {
                     sh "cd ansible"
-                    dockerimage = docker.build("nginx:latest")
+                    dockerimage = docker.build("sanju02g/demo:latest")
+                }
+            }
+        }
+        stage("docker image push") {
+            steps {
+             environment {
+              dockerregistry: "dockercredentials"
+             }
+                script {
+                    docker.withRegistry( 'https://registry.hub.docker.com', dockerregistry ) {
+                    dockerimage.push("latest")
                 }
             }
         }

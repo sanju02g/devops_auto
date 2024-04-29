@@ -15,7 +15,7 @@ environment{
             sshagent(['demo']) {
              sh '''ssh -o StrictHostKeyChecking=no ec2-user@100.27.10.87
                   scp -r Dockerfile ec2-user@100.27.10.87:/home/ec2-user/
-                  ssh ec2-user@100.27.10.87 "docker.build()"
+                  ssh ec2-user@100.27.10.87 "docker.build nginx:latest"
                 '''
                     }
           }

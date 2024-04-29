@@ -14,7 +14,7 @@ environment{
             steps {
                 script {
                     sh "cd ansible"
-                    dockerimage = docker.build("sanju02g/demo:latest")
+                    dockerimage = docker.build("sanju02g/nginx")
                 }
             }
         }

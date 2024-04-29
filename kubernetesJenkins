@@ -19,10 +19,10 @@ environment{
             }
         }
         stage("docker image push") {
-            steps {
              environment {
               dockerregistry: "dockercredentials"
              }
+            steps{
                 script {
                     docker.withRegistry( 'https://registry.hub.docker.com', dockerregistry ) {
                     dockerimage.push("latest")

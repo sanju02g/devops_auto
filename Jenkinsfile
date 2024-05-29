@@ -1,16 +1,21 @@
-import docker
+import subprocess
 
 // Docker tag variable
+DOCKER_TAG = "latest"
 
-//Docker client initialization
-client = docker.from_env()
+// Define the Docker build command
+docker_build_command = [
+    "docker",
+    "build",
+    "-t",
+    f"sanju02g/ansible:{DOCKER_TAG}",
+    "."
+]
 
-//Build Docker image
-image, build_logs = client.images.build(
-    path=".",  # Path to the Dockerfile and context
-    tag=f"sanju02g/ansible:latest",
-)
+// Run the Docker build command
+process = subprocess.Popen(docker_build_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+stdout, stderr = process.communicate()
 
-// Output build logs
-for log in build_logs:
-    print(log)
+//Print output and error messages
+print("Output:", stdout.decode())
+print("Errors:", stderr.decode())
